@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 
-from serial import Serial
+import logging
 import time
+
+logging.basicConfig(level=logging.DEBUG)
 
 import site
 site.addsitedir('.')
 from pl_m2014r import Sign
 
-s = Sign('/dev/ttyUSB0', id=1)
+s = Sign('/dev/ttyUSB0', id=1, retries=20)
 count = 1
 s.wakeup()
 s.run_page('A')
