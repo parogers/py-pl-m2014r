@@ -7,7 +7,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 import site
 site.addsitedir('.')
-from pl_m2014r import Sign
+from plm2014r import Sign
 
 s = Sign('/dev/ttyUSB0', id=1, retries=20)
 count = 1
